@@ -111,6 +111,25 @@ async def whoizme(e):
         await asyncio.sleep(0.3)
         await e.edit("User Killed successfully from headshot with AWM")
 
+@register(outgoing=True, pattern="^.upro$")
+async def whoizme(e):
+    if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
+        await e.edit("EVERyBOdy")
+        await asyncio.sleep(0.3)
+        await e.edit("iZ")
+        await asyncio.sleep(0.2)
+        await e.edit("PrO")
+        await asyncio.sleep(0.5)
+        await e.edit("UNtIL ")
+        await asyncio.sleep(0.2)
+        await e.edit("U")
+        await asyncio.sleep(0.3)
+        await e.edit("ArRivE")
+        await asyncio.sleep(0.3)
+        await e.edit("🔥")
+        await asyncio.sleep(0.3)
+        await e.edit("EVERyBOdy iZ PrO UNtIL U ArRivE 🔥")
+
 
 @register(outgoing=True, pattern="^.repeat")
 async def repeat(e):
