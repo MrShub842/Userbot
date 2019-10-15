@@ -923,6 +923,17 @@ async def hoi(hello):
     """ Greet everyone! """
     if not hello.text[0].isalpha() and hello.text[0] not in ("/", "#", "@", "!"):
         await hello.edit(random.choice(HELLOSTR))
+
+@register(outgoing=True, pattern="^.hack$")
+async def hack(hacked):
+    """ Dont hack Too much -_-"""
+    if not hacked.text[0].isalpha() and hacked.text[0] not in ("/", "#", "@", "!"):
+        if await hacked.get_reply_message():
+            await hacked.edit(
+                "`Targeted User was Hacked successfully 👨‍💻......`"
+                "`Pay 999$ To` @devpatel_73 `To Remove This Hack`\n"
+            )
+
 			  
 @register(outgoing=True, pattern="^.bt$")
 async def bluetext(bte):
