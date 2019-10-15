@@ -140,7 +140,10 @@ async def promote(promt):
 
         await promt.edit("`Promoting this gey...`")
 
-        user = await get_user_from_event(promt)
+        user, rank = await get_user_from_event(promt)
+        if not rank:
+            # Just in case.
+            rank = "admeme"
         if user:
             pass
         else:
@@ -152,10 +155,11 @@ async def promote(promt):
                 EditAdminRequest(
                     promt.chat_id,
                     user.id,
-                    new_rights
+                    new_rights,
+                    rank
                 )
             )
-            await promt.edit("`Promoted Successfully!.Ab party de!`")
+            await promt.edit("`Promoted Successfully!`")
 
         # If Telethon spit BadRequestError, assume
         # we don't have Promote permission
